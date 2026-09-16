@@ -1,0 +1,28 @@
+[
+    {
+        "id": "EVAL-001",
+        "question": "Who founded the Bauhaus?",
+        "expected_card_id": "DS-001",
+        "expected_keywords": [
+            "Walter Gropius",
+            "1919"
+        ]
+    },
+    {
+        "id": "EVAL-002",
+        "question": "What did William Morris criticize?",
+        "expected_card_id": "DS-002",
+        "expected_keywords": [
+            "industrial mass production"
+        ]
+    },
+    {
+        "id": "EVAL-003",
+        "question": "Which school emphasized systematic design methods?",
+        "expected_card_id": "DS-003",
+        "expected_keywords": [
+            "Ulm",
+            "systematic design methods"
+        ]
+    }
+]

@@ -24,5 +24,27 @@
             "Ulm",
             "systematic design methods"
         ]
+    },
+    {
+        "id": "EVAL-004",
+        "question": "When was the Bauhaus founded?",
+        "expected_card_id": "DS-001",
+        "expected_keywords": [
+            "1919"
+        ]
+    },
+    {
+        "id": "EVAL-005",
+        "question": "Which movement was associated with William Morris?",
+        "expected_card_id": "DS-002",
+        "expected_keywords": [
+            "Arts and Crafts Movement"
+        ]
+    },
+    {
+        "id": "EVAL-006",
+        "question": "Who designed the iPhone?",
+        "expected_card_id": null,
+        "expected_keywords": []
     }
 ]

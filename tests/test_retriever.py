@@ -52,3 +52,16 @@ def test_empty_question_returns_empty_results():
     results = retrieve("", cards)
 
     assert results == []
+
+
+def test_irrelevant_question_returns_empty_results():
+    cards = load_knowledge_cards(
+        "data/knowledge/sample_cards.json"
+    )
+
+    results = retrieve(
+        "Who designed the iPhone?",
+        cards,
+    )
+
+    assert results == []

@@ -42,6 +42,7 @@ def retrieve(
     question: str,
     cards: list[dict[str, Any]],
     top_k: int = 3,
+    min_score: int = 2,
 ) -> list[dict[str, Any]]:
     if not question.strip():
         return []
@@ -51,7 +52,7 @@ def retrieve(
     for card in cards:
         score = calculate_score(question, card)
 
-        if score > 0:
+        if score >= min_score:
             scored_cards.append(
                 {
                     "score": score,

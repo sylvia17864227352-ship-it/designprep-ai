@@ -1,0 +1,102 @@
+[
+    {
+        "id": "ZH-001",
+        "question": "什么是俄国构成主义？",
+        "expected_name": "俄国构成主义"
+    },
+    {
+        "id": "ZH-002",
+        "question": "俄国构成主义的背景和特点是什么？",
+        "expected_name": "俄国构成主义"
+    },
+    {
+        "id": "ZH-003",
+        "question": "俄国构成主义的设计思想是什么？",
+        "expected_name": "俄国构成主义的设计思想"
+    },
+    {
+        "id": "ZH-004",
+        "question": "俄国构成主义有哪些代表人物？",
+        "expected_name": "俄国构成主义的代表人物"
+    },
+    {
+        "id": "ZH-005",
+        "question": "马列维奇的代表作品是什么？",
+        "expected_name": "马列维奇"
+    },
+    {
+        "id": "ZH-006",
+        "question": "谁创作了《白底上的黑色正方形》？",
+        "expected_name": "马列维奇"
+    },
+    {
+        "id": "ZH-007",
+        "question": "塔特林是谁？",
+        "expected_name": "塔特林"
+    },
+    {
+        "id": "ZH-008",
+        "question": "第三国际纪念塔是谁设计的？",
+        "expected_name": "塔特林"
+    },
+    {
+        "id": "ZH-009",
+        "question": "李西斯基的代表作品是什么？",
+        "expected_name": "李西斯基"
+    },
+    {
+        "id": "ZH-010",
+        "question": "《红楔子攻打白色》的作者是谁？",
+        "expected_name": "李西斯基"
+    },
+    {
+        "id": "ZH-011",
+        "question": "俄国构成主义产生了哪些影响？",
+        "expected_name": "俄国构成主义的影响及意义"
+    },
+    {
+        "id": "ZH-012",
+        "question": "什么是科隆论战？",
+        "expected_name": "科隆论战"
+    },
+    {
+        "id": "ZH-013",
+        "question": "科隆论战的争论双方是谁？",
+        "expected_name": "科隆论战"
+    },
+    {
+        "id": "ZH-014",
+        "question": "德国工业同盟的宗旨是什么？",
+        "expected_name": "德国工业同盟"
+    },
+    {
+        "id": "ZH-015",
+        "question": "德国工业同盟产生了哪些影响？",
+        "expected_name": "德国工业同盟的影响"
+    },
+    {
+        "id": "ZH-016",
+        "question": "彼得·贝伦斯的主要贡献是什么？",
+        "expected_name": "彼得·贝伦斯"
+    },
+    {
+        "id": "ZH-017",
+        "question": "谁被称为第一个驻厂设计师？",
+        "expected_name": "彼得·贝伦斯"
+    },
+    {
+        "id": "ZH-018",
+        "question": "勒·柯布西耶的设计理念是什么？",
+        "expected_name": "勒·柯布西耶"
+    },
+    {
+        "id": "ZH-019",
+        "question": "勒·柯布西耶有哪些代表作品？",
+        "expected_name": "勒·柯布西耶的代表作品"
+    },
+    {
+        "id": "ZH-020",
+        "question": "量子计算机的工作原理是什么？",
+        "expected_name": null
+    }
+]

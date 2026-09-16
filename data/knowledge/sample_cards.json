@@ -1,0 +1,41 @@
+[
+    {
+        "id": "DS-001",
+        "title": "Bauhaus",
+        "content": "The Bauhaus was founded by Walter Gropius in Weimar in 1919. It aimed to unify art, craft, and technology and became one of the most influential schools of modern design.",
+        "keywords": [
+            "Bauhaus",
+            "Walter Gropius",
+            "modern design",
+            "Weimar"
+        ],
+        "category": "design_movement",
+        "source": "Design History Notes"
+    },
+    {
+        "id": "DS-002",
+        "title": "Arts and Crafts Movement",
+        "content": "The Arts and Crafts Movement emerged in Britain in the late nineteenth century. William Morris was one of its most important figures and criticized the poor quality of industrial mass production.",
+        "keywords": [
+            "Arts and Crafts",
+            "William Morris",
+            "Britain",
+            "craft"
+        ],
+        "category": "design_movement",
+        "source": "Design History Notes"
+    },
+    {
+        "id": "DS-003",
+        "title": "Ulm School of Design",
+        "content": "The Ulm School of Design was founded in Germany in 1953. It emphasized systematic design methods, science, technology, and interdisciplinary approaches.",
+        "keywords": [
+            "Ulm",
+            "HfG Ulm",
+            "Germany",
+            "design methodology"
+        ],
+        "category": "design_school",
+        "source": "Design History Notes"
+    }
+]

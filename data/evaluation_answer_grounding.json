@@ -1,0 +1,53 @@
+[
+    {
+        "id": "AG-001",
+        "question": "霍尔塔的代表作品是什么？",
+        "expected_keywords": [
+            "塔赛旅馆"
+        ],
+        "forbidden_keywords": []
+    },
+    {
+        "id": "AG-002",
+        "question": "什么是比利时线条？",
+        "expected_keywords": [
+            "霍尔塔",
+            "线条"
+        ],
+        "forbidden_keywords": []
+    },
+    {
+        "id": "AG-003",
+        "question": "谁被称为第一个驻厂设计师？",
+        "expected_keywords": [
+            "彼得·贝伦斯"
+        ],
+        "forbidden_keywords": []
+    },
+    {
+        "id": "AG-004",
+        "question": "塔特林的代表作品是什么？",
+        "expected_keywords": [
+            "第三国际纪念塔"
+        ],
+        "forbidden_keywords": []
+    },
+    {
+        "id": "AG-005",
+        "question": "勒·柯布西耶的代表作品有哪些？",
+        "expected_keywords": [
+            "萨沃伊住宅",
+            "朗香教堂",
+            "马赛公寓"
+        ],
+        "forbidden_keywords": []
+    },
+    {
+        "id": "AG-006",
+        "question": "量子计算机的工作原理是什么？",
+        "expected_keywords": [
+            "当前知识库中没有足够信息确认"
+        ],
+        "forbidden_keywords": []
+    }
+]

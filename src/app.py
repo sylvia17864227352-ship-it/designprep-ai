@@ -1,22 +1,272 @@
+import html
+
 import streamlit as st
 
-from src.loader import load_knowledge_cards
-from src.retriever import retrieve
-from src.answer import build_answer
+from src.hybrid_retriever import HybridRetriever
+from src.llm_provider import LLMProvider
+from src.loader import load_processed_knowledge_cards
+from src.rag_pipeline import RAGPipeline
 
 
-KNOWLEDGE_PATH = "data/knowledge/sample_cards.json"
-
-EXAMPLE_QUESTIONS = [
-    "Who founded the Bauhaus?",
-    "What did William Morris criticize?",
-    "Which school emphasized systematic design methods?",
-]
+KNOWLEDGE_PATH = (
+    "data/knowledge/processed/knowledge_cards.json"
+)
 
 
-@st.cache_data
-def load_cards():
-    return load_knowledge_cards(KNOWLEDGE_PATH)
+@st.cache_resource
+def build_pipeline():
+    cards = load_processed_knowledge_cards(
+        KNOWLEDGE_PATH
+    )
+
+    retriever = HybridRetriever(
+        keyword_weight=0.7,
+        semantic_weight=0.3,
+    )
+
+    llm = LLMProvider()
+
+    pipeline = RAGPipeline(
+        cards=cards,
+        retriever=retriever,
+        llm=llm,
+    )
+
+    return pipeline, len(cards)
+
+
+def initialize_chat():
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+
+def apply_style():
+    st.markdown(
+        """
+        <style>
+
+        .block-container {
+            max-width: 950px;
+            padding-top: 2rem;
+            padding-bottom: 7rem;
+        }
+
+        .user-bubble {
+            background: #f1f3f5;
+            border-radius: 18px 18px 4px 18px;
+            padding: 14px 18px;
+            margin: 8px 0 18px 0;
+            font-size: 17px;
+            line-height: 1.7;
+            display: inline-block;
+            max-width: 100%;
+            text-align: left;
+        }
+
+        .assistant-bubble {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px 18px 18px 4px;
+            padding: 14px 18px;
+            margin: 8px 0 8px 0;
+            font-size: 17px;
+            line-height: 1.7;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .user-label {
+            text-align: right;
+            color: #8b5cf6;
+            font-size: 13px;
+            margin-bottom: -4px;
+        }
+
+        .assistant-label {
+            color: #f59e0b;
+            font-size: 13px;
+            margin-bottom: -4px;
+        }
+
+        .designprep-subtitle {
+            color: #6b7280;
+            margin-bottom: 0.25rem;
+        }
+
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_sources(sources):
+    if not sources:
+        return
+
+    with st.expander("查看资料来源"):
+        for source in sources:
+            source_info = source.get(
+                "source",
+                {},
+            )
+
+            name = source.get(
+                "name",
+                "",
+            )
+
+            card_id = source.get(
+                "card_id",
+                "",
+            )
+
+            book = source_info.get(
+                "book",
+                "未知来源",
+            )
+
+            page = source_info.get(
+                "page",
+            )
+
+            source_text = (
+                f"**{name}**  \n"
+                f"知识卡：`{card_id}`  \n"
+                f"来源：{book}"
+            )
+
+            if page:
+                source_text += f"，第 {page} 页"
+
+            st.markdown(source_text)
+
+
+def render_rewritten_query(
+    original_question,
+    rewritten_question,
+):
+    if not original_question:
+        return
+
+    if not rewritten_question:
+        return
+
+    with st.expander("查看检索问题"):
+        st.markdown(
+            f"**原始问题：** {original_question}"
+        )
+
+        st.markdown(
+            f"**改写后：** {rewritten_question}"
+        )
+
+
+def render_user_message(content):
+    left_space, user_column = st.columns(
+        [0.28, 0.72]
+    )
+
+    with user_column:
+        st.markdown(
+            '<div class="user-label">你</div>',
+            unsafe_allow_html=True,
+        )
+
+        safe_content = html.escape(content)
+
+        safe_content = safe_content.replace(
+            "\n",
+            "<br>",
+        )
+
+        st.markdown(
+            f"""
+            <div style="text-align:right;">
+                <div class="user-bubble">
+                    {safe_content}
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+
+def render_assistant_message(
+    content,
+    sources=None,
+    original_question=None,
+    rewritten_question=None,
+):
+    assistant_column, right_space = st.columns(
+        [0.78, 0.22]
+    )
+
+    with assistant_column:
+        st.markdown(
+            '<div class="assistant-label">'
+            'DesignPrep AI'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+
+        safe_content = html.escape(content)
+
+        safe_content = safe_content.replace(
+            "\n",
+            "<br>",
+        )
+
+        st.markdown(
+            f"""
+            <div class="assistant-bubble">
+                {safe_content}
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        render_rewritten_query(
+            original_question,
+            rewritten_question,
+        )
+
+        render_sources(
+            sources or []
+        )
+
+
+def render_history():
+    for message in st.session_state.messages:
+        role = message.get(
+            "role",
+            "",
+        )
+
+        if role == "user":
+            render_user_message(
+                message.get(
+                    "content",
+                    "",
+                )
+            )
+
+        elif role == "assistant":
+            render_assistant_message(
+                message.get(
+                    "content",
+                    "",
+                ),
+                sources=message.get(
+                    "sources",
+                    [],
+                ),
+                original_question=message.get(
+                    "original_question",
+                ),
+                rewritten_question=message.get(
+                    "rewritten_question",
+                ),
+            )
 
 
 def main():
@@ -26,78 +276,104 @@ def main():
         layout="centered",
     )
 
+    apply_style()
+    initialize_chat()
+
     st.title("DesignPrep AI")
-    st.caption(
-        "A lightweight design-history question-answering assistant "
-        "with source tracing."
+
+    st.markdown(
+        '<div class="designprep-subtitle">'
+        "基于设计史知识库的可追溯 AI 问答助手"
+        "</div>",
+        unsafe_allow_html=True,
     )
 
     try:
-        cards = load_cards()
+        pipeline, card_count = build_pipeline()
+
     except Exception as error:
-        st.error(f"Failed to load knowledge data: {error}")
+        st.error(
+            f"系统初始化失败：{error}"
+        )
         return
 
-    st.write(f"Knowledge cards loaded: {len(cards)}")
-
-    st.subheader("Example questions")
-
-    for example in EXAMPLE_QUESTIONS:
-        st.code(example, language=None)
-
-    question = st.text_input(
-        "Ask a design history question",
-        placeholder="e.g. Who founded the Bauhaus?",
+    st.caption(
+        f"当前已加载 {card_count} 张知识卡"
     )
 
-    if st.button("Ask", type="primary"):
-        if not question.strip():
-            st.warning("Please enter a question.")
-            return
+    st.divider()
 
-        retrieval_results = retrieve(
-            question,
-            cards,
-            top_k=3,
-        )
+    render_history()
 
-        response = build_answer(
-            question,
-            retrieval_results,
-        )
+    question = st.chat_input(
+        "输入你的设计史问题..."
+    )
 
-        st.divider()
+    if not question:
+        return
 
-        st.subheader("Answer")
-        st.write(response["answer"])
+    history = list(
+        st.session_state.messages
+    )
 
-        if response["sources"]:
-            st.subheader("Source")
+    render_user_message(
+        question
+    )
 
-            for source in response["sources"]:
-                st.markdown(
-                    f'**{source["title"]}**  \n'
-                    f'Card ID: `{source["id"]}`  \n'
-                    f'Source: {source["source"]}'
-                )
-
-        else:
-            st.info(
-                "No source was returned because no relevant "
-                "knowledge card was found."
+    with st.spinner(
+        "正在检索知识库并生成回答..."
+    ):
+        try:
+            result = pipeline.ask(
+                question,
+                history=history,
             )
 
-        if response["retrieved_cards"]:
-            with st.expander("Retrieval details"):
-                for index, card in enumerate(
-                    response["retrieved_cards"],
-                    start=1,
-                ):
-                    st.write(
-                        f'{index}. {card["id"]} — '
-                        f'{card["title"]} '
-                        f'(score: {card["score"]})'
-                    )
+        except Exception as error:
+            st.error(
+                f"回答生成失败：{error}"
+            )
+            return
+
+    rewritten_question = result.get(
+        "rewritten_question",
+        question,
+    )
+
+    sources = result.get(
+        "sources",
+        [],
+    )
+
+    active_topic = result.get(
+        "active_topic",
+        "",
+    )
+
+    render_assistant_message(
+        result["answer"],
+        sources=sources,
+        original_question=question,
+        rewritten_question=rewritten_question,
+    )
+
+    st.session_state.messages.append(
+        {
+            "role": "user",
+            "content": question,
+        }
+    )
+
+    st.session_state.messages.append(
+        {
+            "role": "assistant",
+            "content": result["answer"],
+            "sources": sources,
+            "original_question": question,
+            "rewritten_question": rewritten_question,
+            "active_topic": active_topic,
+        }
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,64 @@
+[
+    {
+        "id": "QR-001",
+        "history": [
+            {
+                "role": "user",
+                "content": "霍尔塔是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "霍尔塔是比利时新艺术运动的重要代表人物。"
+            }
+        ],
+        "question": "那他的代表作品呢？",
+        "expected_keywords": [
+            "霍尔塔",
+            "代表作品"
+        ]
+    },
+    {
+        "id": "QR-002",
+        "history": [
+            {
+                "role": "user",
+                "content": "勒·柯布西耶是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "勒·柯布西耶是法国现代主义建筑的重要代表。"
+            }
+        ],
+        "question": "他的设计理念是什么？",
+        "expected_keywords": [
+            "勒·柯布西耶",
+            "设计理念"
+        ]
+    },
+    {
+        "id": "QR-003",
+        "history": [
+            {
+                "role": "user",
+                "content": "塔特林是谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "塔特林是俄国构成主义运动的重要代表人物。"
+            }
+        ],
+        "question": "他的代表作是什么？",
+        "expected_keywords": [
+            "塔特林",
+            "代表作"
+        ]
+    },
+    {
+        "id": "QR-004",
+        "history": [],
+        "question": "什么是德国工业同盟？",
+        "expected_keywords": [
+            "德国工业同盟"
+        ]
+    }
+]

@@ -1,0 +1,552 @@
+{
+  "summary": {
+    "total": 20,
+    "success": 19,
+    "correct_rejection": 1,
+    "ranking_failure": 0,
+    "recall_failure": 0,
+    "no_retrieval": 0,
+    "false_positive": 0
+  },
+  "cases": [
+    {
+      "case_index": 1,
+      "question": "什么是俄国构成主义？",
+      "expected_name": "俄国构成主义",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0093",
+          "name": "俄国构成主义",
+          "hybrid_score": 0.8903,
+          "keyword_score": 84.0,
+          "semantic_score": 0.7653
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0084",
+          "name": "俄国构成主义的影响及意义",
+          "hybrid_score": 0.7813,
+          "keyword_score": 73.0,
+          "semantic_score": 0.6903
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0096",
+          "name": "俄国构成主义的设计思想",
+          "hybrid_score": 0.7434,
+          "keyword_score": 69.0,
+          "semantic_score": 0.669
+        }
+      ]
+    },
+    {
+      "case_index": 2,
+      "question": "俄国构成主义的背景和特点是什么？",
+      "expected_name": "俄国构成主义",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0093",
+          "name": "俄国构成主义",
+          "hybrid_score": 0.9419,
+          "keyword_score": 103.0,
+          "semantic_score": 0.8064
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0096",
+          "name": "俄国构成主义的设计思想",
+          "hybrid_score": 0.8207,
+          "keyword_score": 90.0,
+          "semantic_score": 0.6968
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0084",
+          "name": "俄国构成主义的影响及意义",
+          "hybrid_score": 0.8134,
+          "keyword_score": 86.0,
+          "semantic_score": 0.7632
+        }
+      ]
+    },
+    {
+      "case_index": 3,
+      "question": "俄国构成主义的设计思想是什么？",
+      "expected_name": "俄国构成主义的设计思想",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0081",
+          "name": "俄国构成主义的设计思想",
+          "hybrid_score": 0.9514,
+          "keyword_score": 142.0,
+          "semantic_score": 0.8379
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0084",
+          "name": "俄国构成主义的影响及意义",
+          "hybrid_score": 0.6775,
+          "keyword_score": 90.0,
+          "semantic_score": 0.7795
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0093",
+          "name": "俄国构成主义",
+          "hybrid_score": 0.6768,
+          "keyword_score": 90.0,
+          "semantic_score": 0.777
+        }
+      ]
+    },
+    {
+      "case_index": 4,
+      "question": "俄国构成主义有哪些代表人物？",
+      "expected_name": "俄国构成主义的代表人物",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0159",
+          "name": "俄国构成主义的代表人物",
+          "hybrid_score": 0.929,
+          "keyword_score": 110.0,
+          "semantic_score": 0.7632
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0153",
+          "name": "俄国构成主义",
+          "hybrid_score": 0.8721,
+          "keyword_score": 99.0,
+          "semantic_score": 0.8071
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0084",
+          "name": "俄国构成主义的影响及意义",
+          "hybrid_score": 0.6538,
+          "keyword_score": 70.0,
+          "semantic_score": 0.6946
+        }
+      ]
+    },
+    {
+      "case_index": 5,
+      "question": "马列维奇的代表作品是什么？",
+      "expected_name": "马列维奇",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0164",
+          "name": "马列维奇",
+          "hybrid_score": 0.9211,
+          "keyword_score": 85.0,
+          "semantic_score": 0.7368
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0159",
+          "name": "俄国构成主义的代表人物",
+          "hybrid_score": 0.5582,
+          "keyword_score": 50.0,
+          "semantic_score": 0.4881
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0114",
+          "name": "勒·柯布西耶的代表作品",
+          "hybrid_score": 0.5298,
+          "keyword_score": 44.0,
+          "semantic_score": 0.5582
+        }
+      ]
+    },
+    {
+      "case_index": 6,
+      "question": "谁创作了《白底上的黑色正方形》？",
+      "expected_name": "马列维奇",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0164",
+          "name": "马列维奇",
+          "hybrid_score": 0.8567,
+          "keyword_score": 64.0,
+          "semantic_score": 0.5224
+        }
+      ]
+    },
+    {
+      "case_index": 7,
+      "question": "塔特林是谁？",
+      "expected_name": "塔特林",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0090",
+          "name": "塔特林",
+          "hybrid_score": 0.8555,
+          "keyword_score": 38.0,
+          "semantic_score": 0.5184
+        }
+      ]
+    },
+    {
+      "case_index": 8,
+      "question": "第三国际纪念塔是谁设计的？",
+      "expected_name": "塔特林",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0166",
+          "name": "塔特林",
+          "hybrid_score": 0.8989,
+          "keyword_score": 58.0,
+          "semantic_score": 0.663
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0176",
+          "name": "阿尔托设计的影响",
+          "hybrid_score": 0.4783,
+          "keyword_score": 33.0,
+          "semantic_score": 0.2667
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0133",
+          "name": "巴塞罗那德国馆",
+          "hybrid_score": 0.4202,
+          "keyword_score": 26.0,
+          "semantic_score": 0.3545
+        }
+      ]
+    },
+    {
+      "case_index": 9,
+      "question": "李西斯基的代表作品是什么？",
+      "expected_name": "李西斯基",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0094",
+          "name": "李西斯基",
+          "hybrid_score": 0.9037,
+          "keyword_score": 81.0,
+          "semantic_score": 0.679
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0159",
+          "name": "俄国构成主义的代表人物",
+          "hybrid_score": 0.5746,
+          "keyword_score": 50.0,
+          "semantic_score": 0.4751
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0114",
+          "name": "勒·柯布西耶的代表作品",
+          "hybrid_score": 0.5461,
+          "keyword_score": 44.0,
+          "semantic_score": 0.5528
+        }
+      ]
+    },
+    {
+      "case_index": 10,
+      "question": "《红楔子攻打白色》的作者是谁？",
+      "expected_name": "李西斯基",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0094",
+          "name": "李西斯基",
+          "hybrid_score": 0.8661,
+          "keyword_score": 54.0,
+          "semantic_score": 0.5537
+        }
+      ]
+    },
+    {
+      "case_index": 11,
+      "question": "俄国构成主义产生了哪些影响？",
+      "expected_name": "俄国构成主义的影响及意义",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0171",
+          "name": "俄国构成主义的影响及意义",
+          "hybrid_score": 0.9059,
+          "keyword_score": 87.0,
+          "semantic_score": 0.7888
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0093",
+          "name": "俄国构成主义",
+          "hybrid_score": 0.8771,
+          "keyword_score": 83.0,
+          "semantic_score": 0.7953
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0096",
+          "name": "俄国构成主义的设计思想",
+          "hybrid_score": 0.7218,
+          "keyword_score": 69.0,
+          "semantic_score": 0.6366
+        }
+      ]
+    },
+    {
+      "case_index": 12,
+      "question": "什么是科隆论战？",
+      "expected_name": "科隆论战",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0097",
+          "name": "科隆论战",
+          "hybrid_score": 0.8623,
+          "keyword_score": 52.0,
+          "semantic_score": 0.5409
+        }
+      ]
+    },
+    {
+      "case_index": 13,
+      "question": "科隆论战的争论双方是谁？",
+      "expected_name": "科隆论战",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0097",
+          "name": "科隆论战",
+          "hybrid_score": 0.8803,
+          "keyword_score": 71.0,
+          "semantic_score": 0.601
+        }
+      ]
+    },
+    {
+      "case_index": 14,
+      "question": "德国工业同盟的宗旨是什么？",
+      "expected_name": "德国工业同盟",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0177",
+          "name": "德国工业同盟",
+          "hybrid_score": 0.9616,
+          "keyword_score": 98.0,
+          "semantic_score": 0.872
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0104",
+          "name": "德国工业同盟的影响",
+          "hybrid_score": 0.9089,
+          "keyword_score": 94.0,
+          "semantic_score": 0.7916
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0148",
+          "name": "包豪斯建立的宗旨",
+          "hybrid_score": 0.7578,
+          "keyword_score": 75.0,
+          "semantic_score": 0.7402
+        }
+      ]
+    },
+    {
+      "case_index": 15,
+      "question": "德国工业同盟产生了哪些影响？",
+      "expected_name": "德国工业同盟的影响",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0104",
+          "name": "德国工业同盟的影响",
+          "hybrid_score": 0.9576,
+          "keyword_score": 102.0,
+          "semantic_score": 0.8586
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0116",
+          "name": "德国工业同盟",
+          "hybrid_score": 0.8679,
+          "keyword_score": 92.0,
+          "semantic_score": 0.7884
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0148",
+          "name": "包豪斯建立的宗旨",
+          "hybrid_score": 0.4659,
+          "keyword_score": 40.0,
+          "semantic_score": 0.6378
+        }
+      ]
+    },
+    {
+      "case_index": 16,
+      "question": "彼得·贝伦斯的主要贡献是什么？",
+      "expected_name": "彼得·贝伦斯",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0106",
+          "name": "彼得·贝伦斯",
+          "hybrid_score": 0.8591,
+          "keyword_score": 81.0,
+          "semantic_score": 0.5303
+        }
+      ]
+    },
+    {
+      "case_index": 17,
+      "question": "谁被称为第一个驻厂设计师？",
+      "expected_name": "彼得·贝伦斯",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0106",
+          "name": "彼得·贝伦斯",
+          "hybrid_score": 0.908,
+          "keyword_score": 56.0,
+          "semantic_score": 0.6933
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0234",
+          "name": "马谢·布鲁尔",
+          "hybrid_score": 0.3656,
+          "keyword_score": 16.0,
+          "semantic_score": 0.5519
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0207",
+          "name": "包豪斯",
+          "hybrid_score": 0.3383,
+          "keyword_score": 15.0,
+          "semantic_score": 0.5028
+        }
+      ]
+    },
+    {
+      "case_index": 18,
+      "question": "勒·柯布西耶的设计理念是什么？",
+      "expected_name": "勒·柯布西耶",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0117",
+          "name": "勒·柯布西耶",
+          "hybrid_score": 0.9088,
+          "keyword_score": 96.0,
+          "semantic_score": 0.696
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0111",
+          "name": "勒·柯布西耶的现代建筑六条基本原则",
+          "hybrid_score": 0.7452,
+          "keyword_score": 81.0,
+          "semantic_score": 0.5152
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0114",
+          "name": "勒·柯布西耶的代表作品",
+          "hybrid_score": 0.6988,
+          "keyword_score": 73.0,
+          "semantic_score": 0.5551
+        }
+      ]
+    },
+    {
+      "case_index": 19,
+      "question": "勒·柯布西耶有哪些代表作品？",
+      "expected_name": "勒·柯布西耶的代表作品",
+      "expected_rank": 1,
+      "status": "success",
+      "top_results": [
+        {
+          "rank": 1,
+          "card_id": "DS-0114",
+          "name": "勒·柯布西耶的代表作品",
+          "hybrid_score": 0.8771,
+          "keyword_score": 97.0,
+          "semantic_score": 0.5904
+        },
+        {
+          "rank": 2,
+          "card_id": "DS-0117",
+          "name": "勒·柯布西耶",
+          "hybrid_score": 0.7527,
+          "keyword_score": 81.0,
+          "semantic_score": 0.5605
+        },
+        {
+          "rank": 3,
+          "card_id": "DS-0111",
+          "name": "勒·柯布西耶的现代建筑六条基本原则",
+          "hybrid_score": 0.5466,
+          "keyword_score": 59.0,
+          "semantic_score": 0.4029
+        }
+      ]
+    },
+    {
+      "case_index": 20,
+      "question": "量子计算机的工作原理是什么？",
+      "expected_name": "",
+      "expected_rank": null,
+      "status": "correct_rejection",
+      "top_results": []
+    }
+  ]
+}

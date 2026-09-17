@@ -161,6 +161,41 @@ def render_rewritten_query(
         )
 
 
+def render_timings(timings_ms):
+    if not timings_ms:
+        return
+
+    with st.expander("查看性能信息"):
+        rewrite_ms = timings_ms.get(
+            "rewrite",
+            0,
+        )
+
+        retrieval_ms = timings_ms.get(
+            "retrieval",
+            0,
+        )
+
+        generation_ms = timings_ms.get(
+            "generation",
+            0,
+        )
+
+        total_ms = timings_ms.get(
+            "total",
+            0,
+        )
+
+        st.markdown(
+            f"""
+- Query Rewrite: `{rewrite_ms} ms`
+- Retrieval: `{retrieval_ms} ms`
+- Generation: `{generation_ms} ms`
+- Total: `{total_ms} ms`
+            """
+        )
+
+
 def render_user_message(content):
     left_space, user_column = st.columns(
         [0.28, 0.72]
@@ -196,6 +231,7 @@ def render_assistant_message(
     sources=None,
     original_question=None,
     rewritten_question=None,
+    timings_ms=None,
 ):
     assistant_column, right_space = st.columns(
         [0.78, 0.22]
@@ -228,6 +264,10 @@ def render_assistant_message(
         render_rewritten_query(
             original_question,
             rewritten_question,
+        )
+
+        render_timings(
+            timings_ms or {}
         )
 
         render_sources(
@@ -265,6 +305,10 @@ def render_history():
                 ),
                 rewritten_question=message.get(
                     "rewritten_question",
+                ),
+                timings_ms=message.get(
+                    "timings_ms",
+                    {},
                 ),
             )
 
@@ -350,11 +394,17 @@ def main():
         "",
     )
 
+    timings_ms = result.get(
+        "timings_ms",
+        {},
+    )
+
     render_assistant_message(
         result["answer"],
         sources=sources,
         original_question=question,
         rewritten_question=rewritten_question,
+        timings_ms=timings_ms,
     )
 
     st.session_state.messages.append(
@@ -372,6 +422,7 @@ def main():
             "original_question": question,
             "rewritten_question": rewritten_question,
             "active_topic": active_topic,
+            "timings_ms": timings_ms,
         }
     )
 
